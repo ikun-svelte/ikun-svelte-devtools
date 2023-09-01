@@ -278,6 +278,9 @@ importers:
       '@fontsource/fira-mono':
         specifier: ^5.0.5
         version: 5.0.5
+      '@ikun-svelte-devtools/server':
+        specifier: workspace:*
+        version: link:../packages/server
       '@neoconfetti/svelte':
         specifier: ^1.0.0
         version: 1.0.0

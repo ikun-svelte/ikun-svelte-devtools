@@ -5,7 +5,8 @@
 	"files": [
 		"dist"
 	],
-	"main": "./src/index.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build": "tsup --config tsup.config.ts",
 		"publish:npm": "pnpm publish --no-git-checks --access public"
@@ -25,6 +26,6 @@
 	},
 	"dependencies": {
 		"baiwusanyu-utils": "^1.0.15",
-		"@ikun-svelte-devtools/shared":"workspace:*"
+		"@ikun-svelte-devtools/shared": "workspace:*"
 	}
 }

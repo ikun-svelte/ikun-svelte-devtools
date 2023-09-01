@@ -2,7 +2,8 @@
 	"name": "@ikun-svelte-devtools/icons",
 	"version": "0.0.0",
 	"type": "module",
-	"main": "./src/index.ts",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
 		"build": "npm run build:js && npm run build:svelte",
 		"build:js": "tsc -p . --outDir dist/ --rootDir src/",
