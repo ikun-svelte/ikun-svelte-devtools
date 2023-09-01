@@ -1,0 +1,97 @@
+{
+  "name": "@ikun-svelte-devtools/core",
+  "description": "A vite plugin for Svelte Devtools",
+  "type": "module",
+  "version": "0.0.0",
+  "keywords": [
+    "vue-devtools",
+    "vite-plugin",
+    "vite-plugin-vue-devtools",
+    "svelte-devtools",
+    "svelte-devtools-plus",
+    "vite-plugin-svelte-devtools",
+    "dx"
+  ],
+  "license": "MIT",
+  "author": "baiwusanyu-c",
+  "homepage": "https://github.com/ikun-svelte/ikun-svelte-devtools#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikun-svelte/ikun-svelte-devtools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ikun-svelte/ikun-svelte-devtools/issues"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "*.d.ts"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "init": "pnpm i",
+    "dev": "run-p dev:*",
+    "dev:client": "",
+    "dev:server": "",
+    "play": "pnpm run --filter @ikun-svelte-devtools/playground dev",
+    "build": "",
+    "build:client": "",
+    "build:server": "",
+    "lint": "prettier --plugin-search-dir --check . && eslint .",
+    "format": "prettier --plugin-search-dir --write .",
+    "release": "",
+    "clean:dist": "rimraf dist && esno scripts/clean.js",
+    "prepare": "npx simple-git-hooks",
+    "update:deps": "npx taze -w -r major && pnpm run init",
+    "publish:npm": "pnpm publish --no-git-checks --access public"
+  },
+  "peerDependencies": {
+    "vite": "^3.0.0-0 || ^4.0.0-0"
+  },
+  "dependencies": {
+    "baiwusanyu-utils": "^1.0.15",
+    "@ikun-svelte-devtools/utils-client":"workspace:*",
+    "@ikun-svelte-devtools/utils-server":"workspace:*",
+    "@ikun-svelte-devtools/icons":"workspace:*",
+    "@ikun-svelte-devtools/shared":"workspace:*",
+    "@ikun-svelte-devtools/client":"workspace:*",
+    "@ikun-svelte-devtools/server":"workspace:*"
+  },
+  "devDependencies": {
+    "@sveltejs/eslint-config": "^6.0.4",
+    "@types/node": "^20.4.1",
+    "@types/splitpanes": "^2.2.1",
+    "@unocss/eslint-config": "^0.53.5",
+    "@unocss/reset": "^0.53.5",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-svelte": "^2.32.4",
+    "prettier": "^3.0.1",
+    "prettier-plugin-svelte": "^3.0.3",
+    "bumpp": "^9.1.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.1",
+    "simple-git-hooks": "^2.8.1",
+    "typescript": "^5.1.6",
+    "tsup": "^7.2.0",
+    "del": "^7.0.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm run format && pnpm run lint",
+    "commit-msg": "node vertify-commit.js"
+  }
+}

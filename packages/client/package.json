@@ -1,0 +1,43 @@
+{
+  "name": "@ikun-svelte-devtools/client",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "xterm": "^5.2.1",
+    "xterm-addon-fit": "^0.7.0",
+    "algoliasearch": "^4.19.1",
+    "svelte-infinite-scroll": "^2.0.1",
+    "@ikun-ui/core": "^0.0.9-beta.4",
+    "svelte-json-tree": "^2.1.0",
+    "svelte-routing": "^2.1.0",
+    "svelte-splitpanes": "^0.8.0",
+    "@ikun-svelte-devtools/utils-client":"workspace:*",
+    "@ikun-svelte-devtools/icons":"workspace:*",
+    "@ikun-svelte-devtools/shared":"workspace:*"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.1.20",
+    "@algolia/client-search": "^4.19.1",
+    "@ikun-ui/preset": "^0.0.9-beta.4",
+    "@sveltejs/vite-plugin-svelte": "^2.4.5",
+    "@tsconfig/svelte": "^5.0.2",
+    "svelte": "^4.2.0",
+    "svelte-check": "^3.5.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "unocss": "^0.55.4",
+    "vite": "^4.4.9",
+    "fuse.js": "^6.6.2",
+    "vis-data": "^7.1.6",
+    "vis-network": "^9.1.6",
+    "vite-hot-client": "^0.2.2",
+    "ohash": "^1.1.3"
+  }
+}

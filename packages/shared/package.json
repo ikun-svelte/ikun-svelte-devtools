@@ -1,0 +1,26 @@
+{
+	"name": "@ikun-svelte-devtools/shared",
+	"version": "0.0.0",
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"main": "./src/index.ts",
+	"scripts": {
+		"build": "tsup --config tsup.config.ts",
+		"publish:npm": "pnpm publish --no-git-checks --access public"
+	},
+	"publishConfig": {
+		"access": "public",
+		"exports": {
+			".": {
+				"types": "./dist/index.d.mts",
+				"require": "./dist/index.mjs",
+				"import": "./dist/index.mts"
+			}
+		},
+		"main": "./dist/index.mjs",
+		"module": "./dist/index.mjs",
+		"types": "./dist/index.d.mts"
+	}
+}

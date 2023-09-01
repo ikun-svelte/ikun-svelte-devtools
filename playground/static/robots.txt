@@ -1,0 +1,18 @@
+# https://www.robotstxt.org/robotstxt.html# https://www.robotstxt.org/robotstxt.html# https://www.robotstxt.org/robotstxt.html# https://www.robotstxt.org/robotstxt.html
+                                                                                                                              User-agent: *
+                                                                                                                              Disallow:
+
+                                                                                    User-agent: *
+                                                                                    Disallow:
+
+                                          User-agent: *
+                                          Disallow:
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow:
+
+User-agent: *
+Disallow:

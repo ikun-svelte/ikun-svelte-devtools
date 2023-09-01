@@ -1,0 +1,48 @@
+{
+  "name": "@ikun-svelte-devtools/server",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/app",
+    "src/guard",
+    "package.json"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "exports": {
+      ".": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.js"
+      }
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "build": "tsup-node --config tsup.config.ts",
+    "publish:npm": "pnpm publish --no-git-checks --access public"
+  },
+  "dependencies": {
+    "execa": "7.1.1",
+    "@ikun-svelte-devtools/utils-server":"workspace:*",
+    "@ikun-svelte-devtools/utils-client":"workspace:*",
+    "@ikun-svelte-devtools/icons":"workspace:*",
+    "@ikun-svelte-devtools/shared":"workspace:*",
+    "vite-plugin-inspect": "^0.7.38",
+    "vite-plugin-sk-router-guard": "^1.0.1",
+    "svelte-kit-inspector": "^1.0.3",
+    "sirv": "^2.0.3"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.21.6",
+    "pathe": "^1.1.1",
+    "fast-glob": "^3.3.1",
+    "image-meta": "^0.1.1",
+    "svelte": "^4.2.0"
+  }
+}

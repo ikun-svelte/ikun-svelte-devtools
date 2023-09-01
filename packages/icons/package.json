@@ -1,0 +1,30 @@
+{
+	"name": "@ikun-svelte-devtools/icons",
+	"version": "0.0.0",
+	"type": "module",
+	"main": "./src/index.ts",
+	"scripts": {
+		"build": "npm run build:js && npm run build:svelte",
+		"build:js": "tsc -p . --outDir dist/ --rootDir src/",
+		"build:svelte": "svelte-strip strip src/ dist",
+		"publish:npm": "pnpm publish --no-git-checks --access public"
+	},
+	"files": [
+		"dist",
+		"package.json"
+	],
+	"publishConfig": {
+		"access": "public",
+		"main": "dist/index.js",
+		"module": "dist/index.js",
+		"svelte": "dist/index.js",
+		"types": "src/index.ts"
+	},
+	"devDependencies": {
+		"@tsconfig/svelte": "^5.0.2",
+		"svelte-strip": "^2.0.0",
+		"tslib": "^2.6.2",
+		"typescript": "^5.2.2",
+		"svelte": "^4.2.0"
+	}
+}
