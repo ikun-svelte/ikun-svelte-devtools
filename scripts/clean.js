@@ -1,11 +1,7 @@
 import { log, setGlobalPrefix } from 'baiwusanyu-utils';
 import { deleteAsync } from 'del';
 
-const OUTPUT_NODE_MODULES = [
-	'dist',
-	'packages/**/dist',
-	'playground/**/dist',
-];
+const OUTPUT_NODE_MODULES = ['dist', 'packages/**/dist', 'playground/**/dist'];
 async function doCleanOutput() {
 	// set log prefix
 	setGlobalPrefix('[ikun-svelte-devtools]: ');

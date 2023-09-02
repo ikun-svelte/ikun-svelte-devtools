@@ -13,7 +13,7 @@ export default defineConfig({
 		'image-meta',
 		'vite-plugin-sk-router-guard',
 		'svelte-kit-inspector',
-		'sirv',
+		'sirv'
 	],
 	dts: true,
 	minify: false

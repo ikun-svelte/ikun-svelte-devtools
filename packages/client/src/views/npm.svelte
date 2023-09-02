@@ -12,7 +12,7 @@ import {
 } from "@ikun-ui/core";
 import {rpc} from "../composables/rpc";
 import type {  PackageMeta, PackageInfo } from '@ikun-svelte-devtools/shared'
-import { debounce } from 'baiwusanyu-utils'
+import { debounce } from '@baiwusanyu/utils-com'
 import TerminalView from "../components/TerminalView.svelte";
 import { hookApi } from '../composables/hook'
 const algoliaConfig = {

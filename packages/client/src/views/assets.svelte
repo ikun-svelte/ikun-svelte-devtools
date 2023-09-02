@@ -9,7 +9,7 @@ import {
 } from "@ikun-ui/core";
 
 import AssetsBlock from "../components/AssetsBlock.svelte";
-import {deepClone} from "baiwusanyu-utils";
+import {deepClone} from "@baiwusanyu/utils-obj";
 import AssetsDetail from "../components/AssetsDetail.svelte";
 let assets:Array<AssetInfo & {fileName: string}> = []
 let orgAssets:Array<AssetInfo & {fileName: string}> = []

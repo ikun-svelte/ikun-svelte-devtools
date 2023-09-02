@@ -8,8 +8,8 @@
 	"main": "./dist/index.mjs",
 	"types": "./dist/index.d.mts",
 	"scripts": {
-		"build": "tsup --config tsup.config.ts",
 		"dev:client:utils": "tsup --watch --config tsup.config.ts",
+		"build": "tsup --config tsup.config.ts",
 		"publish:npm": "pnpm publish --no-git-checks --access public"
 	},
 	"publishConfig": {

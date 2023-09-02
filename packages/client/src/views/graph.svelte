@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { Data } from 'vis-network'
-import {debounce} from "baiwusanyu-utils";
+import {debounce} from "@baiwusanyu/utils-com";
 import { onMount, onDestroy } from 'svelte'
 import { Network } from 'vis-network'
 import {

@@ -1,7 +1,7 @@
-import { useDevtoolsClient } from './client'
+import { useDevtoolsClient } from './client';
 
-const client = useDevtoolsClient()
+const client = useDevtoolsClient();
 
 export const hookApi = {
-  hook: client.hook,
-}
+	hook: client.hook
+};

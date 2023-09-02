@@ -4,7 +4,7 @@
     export let marginBottom = '0px'
 </script>
 
-<div style = 'margin-bottom: {marginBottom}'
+<div style:margin-bottom = {marginBottom}
      style:height={height}
      style:width={width}>
     <svg xmlns="http://www.w3.org/2000/svg"

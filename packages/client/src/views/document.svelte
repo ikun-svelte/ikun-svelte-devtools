@@ -1,8 +1,8 @@
 <script lang="ts">
     import { documentDetail } from '@ikun-svelte-devtools/shared';
     import {SvelteLogo as Logo} from '@ikun-svelte-devtools/icons';
-    import {SvelteLogo as CarbonCarbon} from '@ikun-svelte-devtools/icons';
-    import {SvelteLogo as CarbonQuery} from '@ikun-svelte-devtools/icons';
+    import {CarbonCarbon} from '@ikun-svelte-devtools/icons';
+    import {CarbonQuery} from '@ikun-svelte-devtools/icons';
     import { KTooltip, KIcon } from "@ikun-ui/core";
     const logoDict = {
         Logo,

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, tick, onDestroy } from 'svelte'
   import {
-    SvelteLogo as Logo,
+    SvelteLogo,
     CloseIcon as Close,
   } from "@ikun-svelte-devtools/icons"
   import EyeDropperContainer from './eye-dropper-container.svelte'
@@ -71,7 +71,7 @@
 
   async function resetBabbleInteract(){
     clearEvt && clearEvt()
-    babbleInteract('#sdt_bubble',toggleModal.bind(true))
+    babbleInteract('#sdt_bubble',() => toggleModal(true))
   }
 
   /**
@@ -181,7 +181,7 @@
   }
   onMount(() => {
     toggleShow(state)
-    clearEvt = babbleInteract('#sdt_bubble', toggleModal.bind(true));
+    clearEvt = babbleInteract('#sdt_bubble', () => toggleModal(true));
     document.addEventListener('keydown', keyDownOpen);
   })
   document.onresize = wrapperEvt('onresize', resetBabbleInteract)
@@ -257,7 +257,7 @@
         {#if state === 'inspector'}
             <Close/>
         {:else }
-            <Logo marginBottom={'4px'}/>
+            <SvelteLogo marginBottom={'4px'}/>
         {/if}
     </div>
 

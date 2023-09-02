@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { copyText } from 'baiwusanyu-utils'
+    import { copyText } from '@baiwusanyu/utils-com'
     import { KMessage, KIcon } from "@ikun-ui/core";
     export let data: {}
     export let width = '24px'

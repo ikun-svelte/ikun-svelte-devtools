@@ -5,7 +5,8 @@ import AssetsPreview from "./AssetsPreview.svelte";
 import type { AssetInfo } from "@ikun-svelte-devtools/shared";
 import {useDevtoolsClient} from "../composables/client";
 import { rpc } from "../composables/rpc";
-import { normalizeSizeUnits, formatDate, relativeTime } from 'baiwusanyu-utils'
+import { formatDate, relativeTime } from '@baiwusanyu/utils-date'
+import { normalizeSizeUnits } from '@baiwusanyu/utils-normalize'
 import Copy from "./Copy.svelte";
 export let asset:(AssetInfo & {fileName: string}) = {
     path: '',
