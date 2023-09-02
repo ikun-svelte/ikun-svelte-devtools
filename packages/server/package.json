@@ -1,7 +1,7 @@
 {
 	"name": "@ikun-svelte-devtools/server",
 	"type": "module",
-	"version": "0.0.1-beta.4",
+	"version": "0.0.1-beta.5",
 	"main": "./dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
@@ -42,7 +42,13 @@
 		"pathe": "^1.1.1",
 		"fast-glob": "^3.3.1",
 		"image-meta": "^0.1.1",
-		"baiwusanyu-utils": "^1.0.15"
+		"@baiwusanyu/utils-com": "^1.0.15",
+		"@baiwusanyu/utils-date": "^1.0.15",
+		"@baiwusanyu/utils-is": "^1.0.15",
+		"@baiwusanyu/utils-normalize": "^1.0.15",
+		"@baiwusanyu/utils-obj": "^1.0.15",
+		"@baiwusanyu/utils-task": "^1.0.15",
+		"hash-sum": "^2.0.0"
 	},
 	"devDependencies": {
 		"svelte": "^4.2.0"

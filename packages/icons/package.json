@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/icons",
-	"version": "0.0.1-beta.4",
+	"version": "0.0.1-beta.5",
 	"type": "module",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -22,7 +22,13 @@
 		"types": "src/index.ts"
 	},
 	"dependencies": {
-		"baiwusanyu-utils": "^1.0.15",
+		"@baiwusanyu/utils-com": "^1.0.15",
+		"@baiwusanyu/utils-date": "^1.0.15",
+		"@baiwusanyu/utils-is": "^1.0.15",
+		"@baiwusanyu/utils-normalize": "^1.0.15",
+		"@baiwusanyu/utils-obj": "^1.0.15",
+		"@baiwusanyu/utils-task": "^1.0.15",
+		"hash-sum": "^2.0.0",
 		"svelte": "^4.2.0"
 	},
 	"devDependencies": {

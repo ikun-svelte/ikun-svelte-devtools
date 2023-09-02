@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/utils-server",
-	"version": "0.0.1-beta.4",
+	"version": "0.0.1-beta.5",
 	"type": "module",
 	"sideEffects": false,
 	"files": [
@@ -28,7 +28,13 @@
 		"@ikun-svelte-devtools/shared": "workspace:*",
 		"birpc": "^0.2.12",
 		"vite-hot-client": "^0.2.2",
-		"baiwusanyu-utils": "^1.0.15"
+		"@baiwusanyu/utils-com": "^1.0.15",
+		"@baiwusanyu/utils-date": "^1.0.15",
+		"@baiwusanyu/utils-is": "^1.0.15",
+		"@baiwusanyu/utils-normalize": "^1.0.15",
+		"@baiwusanyu/utils-obj": "^1.0.15",
+		"@baiwusanyu/utils-task": "^1.0.15",
+		"hash-sum": "^2.0.0"
 	},
 	"devDependencies": {
 		"fast-glob": "^3.3.1",
