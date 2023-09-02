@@ -22,9 +22,9 @@ export default defineConfig({
 		target: 'esnext',
 		minify: false, // 'esbuild',
 		emptyOutDir: true,
-		rollupOptions:{
+		rollupOptions: {
 			external: [/jiti/]
 		}
-	},
+	}
 });
 // TODO src
