@@ -4,10 +4,10 @@
     import {rpc} from "../composables/rpc.js";
     import JSONTree from 'svelte-json-tree'
     import Copy from "../components/Copy.svelte";
-    let routes: Array<routeInfo> | null = []
+    let routes: Array<routeInfo> = []
     let selectRoute = {}
-    rpc.getRoutesInfo().then((res) => {
-        routes = res.sort((a, b) => {
+    rpc.getRoutesInfo().then((res: unknown) => {
+        routes = (res as Array<routeInfo>).sort((a, b) => {
             if (a.filePath < b.filePath) {
                 return -1;
             }
@@ -19,10 +19,12 @@
         selectRoute = routes[0]
     })
 
-    const setActive = (index) => {
-        routes.forEach(value => value.active = false)
-        routes[index].active = true
-        selectRoute = routes[index]
+    const setActive = (index: number) => {
+        if(routes){
+            routes.forEach(value => value.active = false)
+            routes[index].active = true
+            selectRoute = routes[index]
+        }
     }
 </script>
 

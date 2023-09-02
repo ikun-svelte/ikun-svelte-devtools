@@ -49,7 +49,7 @@ const handleSwitchTabMul = (value, type) => {
     setConfigByTabs()
 }
 
-const handleSwitchTab = (v, index) => {
+const handleSwitchTab = (v: CustomEvent, index: number) => {
     tab[index].hide = !v.detail
     config.tabsHide[index] = !v.detail
     categoriesMarks[tab[index].category] = v.detail

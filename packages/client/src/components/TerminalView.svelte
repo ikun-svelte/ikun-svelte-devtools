@@ -6,7 +6,7 @@
   import { hookApi } from '../composables/hook'
   import { tick } from "svelte";
   export let modelValue = false
-  let container = null
+  let container: null | HTMLElement = null
   let term: Terminal
 
   $:if(modelValue){
@@ -22,7 +22,7 @@
     })
     const fitAddon = new FitAddon()
     term.loadAddon(fitAddon)
-    term.open(container)
+    term.open(container!)
     fitAddon.fit()
 
     hookApi.hook.on('__svelte-devtools:terminal:data__', (data: string) => {
@@ -37,6 +37,6 @@
   }
 </script>
 <KMask value={modelValue}>
-    <div bind:this = {container}>
+    <div bind:this= {container}>
     </div>
 </KMask>

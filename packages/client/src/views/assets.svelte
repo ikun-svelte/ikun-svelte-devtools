@@ -23,9 +23,9 @@ async function getAssets() {
 }
 getAssets()
 
-function classifyAssets(value){
+function classifyAssets(value:(AssetInfo & {fileName: string})){
   const basePath = value.path.split('/');
-  (value as (AssetInfo & {fileName: string})).fileName = basePath.pop()
+  value.fileName = basePath.pop() || ''
   let key = basePath.join('/') || '/'
   if(!assetsGrid[key]){
     assetsGrid[key] = []
@@ -85,7 +85,7 @@ const iconDict = {
     video: 'i-carbon-video',
     audio: 'i-carbon-document-audio',
     other: 'i-carbon-document-unknown'
-}
+} as any
 </script>
 <div class="flex flex-col h-full">
     <div class="w-full pt-6 px-4 pb-2 shadow">

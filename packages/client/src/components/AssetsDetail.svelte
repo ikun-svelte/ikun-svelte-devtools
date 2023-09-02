@@ -3,6 +3,7 @@ import DividerTitle from "./DividerTitle.svelte";
 import { KMessage, KIcon, KButton } from "@ikun-ui/core";
 import AssetsPreview from "./AssetsPreview.svelte";
 import type { AssetInfo } from "@ikun-svelte-devtools/shared";
+// @ts-ignore
 import {useDevtoolsClient} from "../composables/client";
 import { rpc } from "../composables/rpc";
 import { formatDate, relativeTime } from '@baiwusanyu/utils-date'
@@ -20,38 +21,36 @@ export let asset:(AssetInfo & {fileName: string}) = {
 const client = useDevtoolsClient()
 const origin = window.parent.location.origin
 
-let imageMeta = null
+let imageMeta: {width: number, height: number} = { width: 0, height: 0 }
 let fileSize = normalizeSizeUnits(asset.size)
 const getImageMeta = () => {
     if (asset.type !== 'image')
         return undefined
-    return rpc.getImageMeta(asset.filePath).then(res => {
-      imageMeta = res
+    return rpc.getImageMeta(asset.filePath).then((res: unknown) => {
+      imageMeta = res as {width: number, height: number}
     })
 }
-let aspectRatio = null
 
-
-let textContent = null
+let textContent: string = ''
 const getTextContent = async () => {
     if (asset.type !== 'text')
         return undefined
-    rpc.getTextAssetContent(asset.filePath).then(res => {
-        textContent = res
+    rpc.getTextAssetContent(asset.filePath).then((res: unknown) => {
+        textContent = res as string
     })
 }
 
-let allowList = []
+let allowList: string[] = []
 const getAllowList = async () => {
   if (asset.type !== 'text')
     return undefined
-  rpc.getAllowList().then(res => {
-    allowList = res
+  rpc.getAllowList().then((res: unknown) => {
+    allowList = res as string[]
   })
 }
 getAllowList()
 
-const handleDownload = (url: string, filePath) => {
+const handleDownload = (url: string, filePath: string) => {
   if(allowList.length > 0 && !isPathInArrayOrSubPath(allowList, filePath)){
     KMessage.warning({
       content: 'Target cannot be downloaded or opened due to svelte-kit security policy'
@@ -67,7 +66,7 @@ const handleDownload = (url: string, filePath) => {
   })
 }
 
-const handleOpen= (url: string, filePath) => {
+const handleOpen= (url: string, filePath: string) => {
   if(allowList.length > 0 && !isPathInArrayOrSubPath(allowList, filePath)){
     KMessage.warning({
       content: 'Target cannot be downloaded or opened due to svelte-kit security policy'
@@ -83,7 +82,7 @@ const handleOpen= (url: string, filePath) => {
   })
 }
 
-function isPathInArrayOrSubPath(pathArray, targetPath) {
+function isPathInArrayOrSubPath(pathArray: string[], targetPath: string) {
   // 遍历路径数组
   for (let i = 0; i < pathArray.length; i++) {
     let currentPath = pathArray[i];
@@ -120,7 +119,6 @@ $: if (asset.filePath && asset.type){
                         </span>
                         <KIcon
                               btn
-                              aria-hidden="true"
                               on:click={() => client.inspector.openInEditor(location.origin, asset.filePath, 1, 1)}
                               cls="hover-icon"
                               width="20px"
@@ -149,7 +147,6 @@ $: if (asset.filePath && asset.type){
                                cls="hover-icon"
                               color="text-tx-light"
                               width="20px"
-                              aria-hidden="true"
                               on:click={()=>handleOpen(asset.publicPath, asset.filePath)}
                               height="20px"
                               attrs={{title: 'open in browser'}}
@@ -173,14 +170,6 @@ $: if (asset.filePath && asset.type){
                     </td>
                     <td class="p-1">{ imageMeta.width } x { imageMeta.height }</td>
                 </tr>
-                {#if aspectRatio}
-                    <tr>
-                        <td class="w-30 ws-nowrap p-1 pr5 text-right op50">
-                            Aspect Ratio
-                        </td>
-                        <td class="p-1">{aspectRatio}</td>
-                    </tr>
-                {/if}
             {/if}
             <tr>
                 <td class="w-30 ws-nowrap p-1 pr5 text-right op50">

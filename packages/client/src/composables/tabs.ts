@@ -125,7 +125,7 @@ export function useCategorizedTabs() {
 	return setTabByConfig(builtinTabs);
 }
 
-function setTabByConfig(tabs) {
+function setTabByConfig(tabs: BuiltinTab[]) {
 	const config = getConfig();
 	return tabs.map((v, index) => {
 		v.hide = config.tabsHide[index];

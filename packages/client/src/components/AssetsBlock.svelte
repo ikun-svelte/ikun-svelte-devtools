@@ -18,14 +18,14 @@
         video: 'i-carbon-video',
         audio: 'i-carbon-document-audio',
         other: 'i-carbon-document-unknown'
-    }
+    } as any
 
-    let assetInner = null
+    let assetInner:any = {}
     $:if(asset){
         assetInner = asset
     }
 
-    let textContentInner = null
+    let textContentInner: string = ''
     $:if(textContent){
         textContentInner = textContent
     }

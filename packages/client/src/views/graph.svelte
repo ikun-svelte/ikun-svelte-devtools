@@ -21,24 +21,25 @@ import {
 } from "@ikun-ui/core";
 import {rpc} from "../composables/rpc";
 import {darkLight} from "@ikun-svelte-devtools/utils-client";
+// @ts-ignore
 import { useDevtoolsClient } from "../composables/client";
-
+import type {ModuleInfo, SvelteDevtoolsHostClient} from '@ikun-svelte-devtools/shared';
 let rootPath = ''
 const modulesMap = new Map<string, { filePath: string }>()
-rpc.root().then(res => {
+rpc.root().then((res: any) => {
     rootPath = res
-}).catch(err => {
+}).catch((err: Error) => {
     console.error(err)
 })
 
 let keyPress = false
-const handleKeyPressDown = (event) => {
+const handleKeyPressDown = (event: KeyboardEvent) => {
   if(event.key === 'Alt' || event.key === 'Meta' || event.key === 'Cmd'){
     keyPress = true
   }
 }
 
-const handleKeyPressUp = (event) => {
+const handleKeyPressUp = (event: KeyboardEvent) => {
   if(event.key === 'Alt' || event.key === 'Meta' || event.key === 'Cmd'){
     keyPress = false
   }
@@ -48,14 +49,14 @@ onDestroy(() => {
   document.removeEventListener('keyup', handleKeyPressUp)
 })
 /********* render chart ***********/
-const handleDataToChartData = (initData) =>{
+const handleDataToChartData = (initData: {data: ModuleInfo[],  main: ModuleInfo[]}) =>{
 
     if (!initData)
         return { node: [], edges: [] }
 
     const { data,  main } = initData
     const { level } = getGraphConfig()
-    const nodes: Data['nodes'] = data.map((mod) => {
+    const nodes: Data['nodes'] = (data).map((mod) => {
         const path = mod.id.replace(/\?.*$/, '').replace(/#.*$/, '')
         const pathSegments = path.split('/')
         const id = mod.id
@@ -80,7 +81,7 @@ const handleDataToChartData = (initData) =>{
                      : darkLight() === 'dark' ? 'white' : 'black',
                  multi: 'html',
              },
-             shape: mod.id.includes('/node_modules/')
+             shape: mod.id!.includes('/node_modules/')
                  ? 'hexagon'
                  : mod.virtual
                      ? 'diamond'
@@ -106,20 +107,20 @@ const handleDataToChartData = (initData) =>{
 }
 
 let searchValue = ''
-let graphData = null
+let graphData: any = null
 const searchNode = debounce((e) => {
   updateChart(e.detail)
 }, 300)
 
-let lastSelectedNode = null
-let networkChart = null
+let lastSelectedNode: any = null
+let networkChart: InstanceType<typeof Network> | null = null
 const client = useDevtoolsClient()
 onMount(async () => {
     graphData = await getGraphData()
     let finalGraphData = initGraphData('', graphData)
 
     const container = document.getElementById('__svelte_devtools_graph')
-    networkChart = new Network(container, handleDataToChartData(finalGraphData) as Data, visNetworkOptions)
+    networkChart = new Network(container!, handleDataToChartData(finalGraphData) as Data, visNetworkOptions)
 
     const resetNodeStyle = () => {
         // @ts-expect-error network body typing error
@@ -143,7 +144,7 @@ onMount(async () => {
 
         const { highlight, openEditor } = getGraphConfig()
         if (openEditor.open && keyPress){
-          return client.inspector.openInEditor(location.origin, modulesMap.get(nodeId)!.filePath, 1, 1)
+          return (client as SvelteDevtoolsHostClient).inspector!.openInEditor(location.origin, modulesMap.get(nodeId)!.filePath, 1, 1)
         }
 
 
@@ -219,7 +220,7 @@ const handleSwitch = (value: boolean, type: 'h' | 'o') => {
 /******************  custom hover path level **********************/
 let hoverPathLevel = level.value
 let hoverPathLevelCustom = level.levelCustom
-const handleHoverPathLevel = (data) => {
+const handleHoverPathLevel = (data:CustomEvent) => {
   hoverPathLevel = data.detail
   const curConfig = getGraphConfig()
   curConfig.level.value = hoverPathLevel
@@ -227,7 +228,7 @@ const handleHoverPathLevel = (data) => {
   setGraphConfigCache(curConfig)
   updateChart()
 }
-const handlePathLevelCustom = (data) => {
+const handlePathLevelCustom = (data: CustomEvent) => {
   hoverPathLevelCustom = data.detail
   const curConfig = getGraphConfig()
   curConfig.level.levelCustom = hoverPathLevelCustom

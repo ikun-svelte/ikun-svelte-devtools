@@ -11,19 +11,19 @@
     } from "@ikun-ui/core";
     let routesNum = 0
     rpc.getRoutesInfo().then((res) => {
-        routesNum = res.length
+        routesNum = (res as Array<unknown>).length
     })
 
     let svelteVersion = '0.0.0'
     let svelteKitVersion = '0.0.0'
-    rpc.getPackages().then((res) => {
-        svelteVersion = res.packages['svelte'].version
-        svelteKitVersion = res.packages['@sveltejs/kit'].version
+    rpc.getPackages().then((res: unknown) => {
+        svelteVersion = (res as Record<string, any>).packages['svelte'].version
+        svelteKitVersion = (res as Record<string, any>).packages['@sveltejs/kit'].version
     })
 
     let sfcNum = 0
     rpc.getSvelteSFCList().then((res) => {
-        sfcNum = res.length
+        sfcNum = (res as Array<unknown>).length
     })
 
     const linkHover = {

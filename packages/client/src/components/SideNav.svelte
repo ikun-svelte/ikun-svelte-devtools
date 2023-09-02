@@ -14,7 +14,7 @@
     activeIndex = index
   }
 
-  const handleClick = (index: number, tab) => {
+  const handleClick = (index: number, tab:{path: string, evt: <T>(arg: T) => void}) => {
       setActiveIndex(index)
       if(!tab.path && tab.evt){
           tab.evt(hookApi.hook)
