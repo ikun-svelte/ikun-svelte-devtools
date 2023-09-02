@@ -1,7 +1,7 @@
 {
 	"name": "@ikun-svelte-devtools/server",
 	"type": "module",
-	"version": "0.0.1-beta.1",
+	"version": "0.0.1-beta.2",
 	"main": "./dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
