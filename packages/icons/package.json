@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/icons",
-	"version": "0.0.1-beta.3",
+	"version": "0.0.1-beta.4",
 	"type": "module",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -21,11 +21,14 @@
 		"svelte": "dist/index.js",
 		"types": "src/index.ts"
 	},
+	"dependencies": {
+		"baiwusanyu-utils": "^1.0.15",
+		"svelte": "^4.2.0"
+	},
 	"devDependencies": {
 		"@tsconfig/svelte": "^5.0.2",
 		"svelte-strip": "^2.0.0",
 		"tslib": "^2.6.2",
-		"typescript": "^5.2.2",
-		"svelte": "^4.2.0"
+		"typescript": "^5.2.2"
 	}
 }

@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/utils-server",
-	"version": "0.0.1-beta.3",
+	"version": "0.0.1-beta.4",
 	"type": "module",
 	"sideEffects": false,
 	"files": [
@@ -27,7 +27,8 @@
 	"dependencies": {
 		"@ikun-svelte-devtools/shared": "workspace:*",
 		"birpc": "^0.2.12",
-		"vite-hot-client": "^0.2.2"
+		"vite-hot-client": "^0.2.2",
+		"baiwusanyu-utils": "^1.0.15"
 	},
 	"devDependencies": {
 		"fast-glob": "^3.3.1",

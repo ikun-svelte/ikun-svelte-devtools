@@ -1,7 +1,7 @@
 {
 	"name": "@ikun-svelte-devtools/client",
 	"type": "module",
-	"version": "0.0.1-beta.3",
+	"version": "0.0.1-beta.4",
 	"main": "index.js",
 	"scripts": {
 		"dev": "vite build --watch",
@@ -25,7 +25,8 @@
 		"svelte-splitpanes": "^0.8.0",
 		"@ikun-svelte-devtools/utils-client": "workspace:*",
 		"@ikun-svelte-devtools/icons": "workspace:*",
-		"@ikun-svelte-devtools/shared": "workspace:*"
+		"@ikun-svelte-devtools/shared": "workspace:*",
+		"baiwusanyu-utils": "^1.0.15"
 	},
 	"devDependencies": {
 		"@iconify-json/carbon": "^1.1.20",
