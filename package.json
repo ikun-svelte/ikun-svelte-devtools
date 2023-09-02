@@ -2,7 +2,7 @@
 	"name": "@ikun-svelte-devtools/core",
 	"description": "A vite plugin for Svelte Devtools",
 	"type": "module",
-	"version": "0.0.1-beta.5",
+	"version": "0.0.1-beta.6",
 	"keywords": [
 		"vue-devtools",
 		"vite-plugin",
@@ -61,7 +61,7 @@
 		"vite": "^3.0.0-0 || ^4.0.0-0"
 	},
 	"dependencies": {
-		"baiwusanyu-utils": "^1.0.15",
+		"baiwusanyu-utils": "^1.0.16",
 		"@ikun-svelte-devtools/utils-client": "workspace:*",
 		"@ikun-svelte-devtools/utils-server": "workspace:*",
 		"@ikun-svelte-devtools/icons": "workspace:*",

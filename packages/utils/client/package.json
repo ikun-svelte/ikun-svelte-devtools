@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/utils-client",
-	"version": "0.0.1-beta.5",
+	"version": "0.0.1-beta.6",
 	"sideEffects": false,
 	"files": [
 		"dist"
@@ -26,12 +26,12 @@
 		"types": "./dist/index.d.mts"
 	},
 	"dependencies": {
-		"@baiwusanyu/utils-com": "^1.0.15",
-		"@baiwusanyu/utils-date": "^1.0.15",
-		"@baiwusanyu/utils-is": "^1.0.15",
-		"@baiwusanyu/utils-normalize": "^1.0.15",
-		"@baiwusanyu/utils-obj": "^1.0.15",
-		"@baiwusanyu/utils-task": "^1.0.15",
+		"@baiwusanyu/utils-com": "^1.0.16",
+		"@baiwusanyu/utils-date": "^1.0.16",
+		"@baiwusanyu/utils-is": "^1.0.16",
+		"@baiwusanyu/utils-normalize": "^1.0.16",
+		"@baiwusanyu/utils-obj": "^1.0.16",
+		"@baiwusanyu/utils-task": "^1.0.16",
 		"hash-sum": "^2.0.0",
 		"@ikun-svelte-devtools/shared": "workspace:*"
 	}
