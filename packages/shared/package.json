@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/shared",
-	"version": "0.0.1-beta.8",
+	"version": "0.0.1-beta.10",
 	"sideEffects": false,
 	"files": [
 		"dist"
