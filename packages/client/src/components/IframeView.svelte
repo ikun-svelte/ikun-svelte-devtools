@@ -5,8 +5,8 @@
     export let colorMode = darkLight()
     export let src = ''
     const iframeCacheMap = new Map<string, HTMLIFrameElement>()
-    let anchor = null
-    let iframeEl = null
+    let anchor: HTMLElement | null = null
+    let iframeEl: HTMLIFrameElement | null = null
     let box:DOMRect | null = null
     let isAddEvt = false
     $:if(anchor){
@@ -69,6 +69,7 @@
             html?.classList.toggle('light', colorMode === 'dark')
         }
         catch (e) {
+            console.error(e)
         }
     }
 

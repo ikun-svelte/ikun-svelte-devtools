@@ -8,10 +8,10 @@
         Logo,
         CarbonCarbon,
         CarbonQuery
-    }
+    } as Record<string, any>
 </script>
 <div class="grid grid-cols-2 grid-rows-2 gap-4 p-8 w-full min-h-full">
-    {#each documentDetail as doc, index (doc.id)}
+    {#each documentDetail as doc (doc.id)}
         <div class="flex p4 border border-solid border-main rounded-lg hover:animate-LianYi">
             <div class="flex-auto">
                 <div class="flex items-center">

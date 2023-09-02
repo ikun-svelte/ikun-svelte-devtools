@@ -56,7 +56,7 @@ const handleDataToChartData = (initData) =>{
     const { data,  main } = initData
     const { level } = getGraphConfig()
     const nodes: Data['nodes'] = data.map((mod) => {
-        const path = mod.id.replace(/\?.*$/, '').replace(/\#.*$/, '')
+        const path = mod.id.replace(/\?.*$/, '').replace(/#.*$/, '')
         const pathSegments = path.split('/')
         const id = mod.id
 

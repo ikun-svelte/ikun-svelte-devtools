@@ -4,7 +4,7 @@ function updateOffset(left: number, top: number, dom: HTMLElement) {
 	dom.style.transform = 'translate(0%, 0%)';
 }
 
-export function babbleInteract(domId: string, clickFn?: Function) {
+export function babbleInteract(domId: string, clickFn?: () => void) {
 	const interactDom = document.querySelector(domId) as HTMLElement;
 	let isDragging = false;
 	let initialX, initialY;

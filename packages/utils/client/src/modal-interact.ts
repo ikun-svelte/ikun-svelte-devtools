@@ -41,8 +41,8 @@ export function dragResize(node: HTMLElement, params) {
 
 		if (isResizing.includes('m')) {
 			// drag modal
-			let leftCur = Math.max(e.clientX - initialX, 0);
-			let bottomCur = e.clientY + initialY + node!.offsetHeight;
+			const leftCur = Math.max(e.clientX - initialX, 0);
+			const bottomCur = e.clientY + initialY + node!.offsetHeight;
 			bottom = `calc(100% - ${bottomCur}px)`;
 			left = `${Math.min(leftCur, document.body.offsetWidth - node!.offsetWidth)}px`;
 		}

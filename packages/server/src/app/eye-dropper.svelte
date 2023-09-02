@@ -6,7 +6,6 @@
     }
 
      interface EyeDropper {
-        new(): EyeDropper
         open: (options?: EyeDropperOpenOptions) => Promise<{ sRGBHex: string }>
         [Symbol.toStringTag]: 'EyeDropper'
     }

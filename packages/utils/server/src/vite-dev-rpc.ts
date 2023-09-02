@@ -4,11 +4,10 @@ import type { WebSocketClient, WebSocketServer } from 'vite';
 import type { ViteHotContext } from 'vite-hot-client';
 
 // create rpc group
-export function createRPCServer<ClientFunction = {}, ServerFunctions = {}>(
-	name: string,
-	ws: WebSocketServer,
-	functions: ServerFunctions
-) {
+export function createRPCServer<
+	ClientFunction = Record<any, any>,
+	ServerFunctions = Record<any, any>
+>(name: string, ws: WebSocketServer, functions: ServerFunctions) {
 	const event = `${name}:rpc`;
 
 	const group = createBirpcGroup<ClientFunction, ServerFunctions>(
@@ -39,7 +38,10 @@ export function createRPCServer<ClientFunction = {}, ServerFunctions = {}>(
 }
 
 // create rpc client
-export function createRPCClient<ServerFunctions = {}, ClientFunctions = {}>(
+export function createRPCClient<
+	ClientFunctions = Record<any, any>,
+	ServerFunctions = Record<any, any>
+>(
 	name: string,
 	hot: ViteHotContext | Promise<ViteHotContext>,
 	functions: ClientFunctions = {} as ClientFunctions
