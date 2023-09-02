@@ -1,8 +1,7 @@
 {
 	"name": "@ikun-svelte-devtools/server",
-	"private": true,
 	"type": "module",
-	"version": "0.0.1-beta.0",
+	"version": "0.0.1-beta.1",
 	"main": "./dist/index.js",
 	"types": "dist/index.d.ts",
 	"files": [
@@ -38,13 +37,13 @@
 		"vite-plugin-inspect": "^0.7.38",
 		"vite-plugin-sk-router-guard": "^1.0.1",
 		"svelte-kit-inspector": "^1.0.3",
-		"sirv": "^2.0.3"
-	},
-	"devDependencies": {
+		"sirv": "^2.0.3",
 		"@antfu/ni": "^0.21.6",
 		"pathe": "^1.1.1",
 		"fast-glob": "^3.3.1",
-		"image-meta": "^0.1.1",
+		"image-meta": "^0.1.1"
+	},
+	"devDependencies": {
 		"svelte": "^4.2.0"
 	}
 }

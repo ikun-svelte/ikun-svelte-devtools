@@ -1,14 +1,14 @@
 {
 	"name": "@ikun-svelte-devtools/client",
-	"private": true,
 	"type": "module",
-	"version": "0.0.1-beta.0",
+	"version": "0.0.1-beta.1",
 	"main": "index.js",
 	"scripts": {
 		"dev": "vite build --watch",
 		"build": "vite build",
 		"preview": "vite preview",
-		"check": "svelte-check --tsconfig ./tsconfig.json"
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"publish:npm": "pnpm publish --no-git-checks --access public"
 	},
 	"files": [
 		"dist",

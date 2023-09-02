@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/shared",
-	"version": "0.0.1-beta.0",
+	"version": "0.0.1-beta.1",
 	"sideEffects": false,
 	"files": [
 		"dist"
@@ -17,7 +17,7 @@
 			".": {
 				"types": "./dist/index.d.mts",
 				"require": "./dist/index.mjs",
-				"import": "./dist/index.mts"
+				"import": "./dist/index.mjs"
 			}
 		},
 		"main": "./dist/index.mjs",
