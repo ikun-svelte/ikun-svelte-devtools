@@ -8,7 +8,7 @@
 	"main": "./dist/index.mjs",
 	"types": "./dist/index.d.mts",
 	"scripts": {
-		"dev:client:utils": "tsup --watch --config tsup.config.ts",
+		"dev": "unbuild --stub",
 		"build": "tsup --config tsup.config.ts",
 		"publish:npm": "pnpm publish --no-git-checks --access public"
 	},
@@ -34,5 +34,8 @@
 		"@baiwusanyu/utils-task": "^1.0.16",
 		"hash-sum": "^2.0.0",
 		"@ikun-svelte-devtools/shared": "workspace:*"
+	},
+	"devDependencies": {
+		"unbuild": "^2.0.0"
 	}
 }

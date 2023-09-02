@@ -21,7 +21,10 @@ export default defineConfig({
 	build: {
 		target: 'esnext',
 		minify: false, // 'esbuild',
-		emptyOutDir: true
-	}
+		emptyOutDir: true,
+		rollupOptions:{
+			external: [/jiti/]
+		}
+	},
 });
 // TODO src

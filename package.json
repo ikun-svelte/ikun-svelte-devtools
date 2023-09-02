@@ -42,20 +42,9 @@
 	},
 	"scripts": {
 		"init": "pnpm i",
-		"dev": "run-p dev:* && pnpm run play",
-		"dev:client": "",
-		"dev:server": "",
-		"dev:icons": "",
-		"dev:shared": "",
-		"dev:utils:client": "",
-		"dev:utils:server": "",
-		"build": "",
-		"build:client": "",
-		"build:server": "",
-		"build:icons": "",
-		"build:shared": "",
-		"build:utils:client": "",
-		"build:utils:server": "",
+		"dev": "esno scripts/dev.js",
+		"dev:client": "pnpm run --filter @ikun-svelte-devtools/client dev",
+		"build": "pnpm run clean:dist && esno scripts/build.js",
 		"play": "pnpm run --filter @ikun-svelte-devtools/playground dev",
 		"lint": "prettier --plugin-search-dir --check . && eslint .",
 		"format": "prettier --plugin-search-dir --write .",
@@ -63,7 +52,7 @@
 		"clean:dist": "rimraf dist && esno scripts/clean.js",
 		"prepare": "npx simple-git-hooks",
 		"update:deps": "npx taze -w -r major && pnpm run init",
-		"publish:npm": "pnpm publish --no-git-checks --access public"
+		"publish:script": "esno scripts/publish.js"
 	},
 	"peerDependencies": {
 		"vite": "^3.0.0-0 || ^4.0.0-0"
@@ -97,7 +86,9 @@
 		"typescript": "^5.1.6",
 		"tsup": "^7.2.0",
 		"del": "^7.0.0",
-		"esno": "latest"
+		"esno": "^0.17.0",
+		"shelljs": "^0.8.5",
+		"fast-glob": "^3.3.1"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm run format && pnpm run lint",

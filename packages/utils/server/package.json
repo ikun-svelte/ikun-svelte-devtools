@@ -9,6 +9,7 @@
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"scripts": {
+		"dev": "unbuild --stub",
 		"build": "tsup-node --config tsup.config.ts",
 		"publish:npm": "pnpm publish --no-git-checks --access public"
 	},
@@ -39,6 +40,7 @@
 	"devDependencies": {
 		"fast-glob": "^3.3.1",
 		"@types/node": "^20.5.7",
-		"vite": "^4.4.9"
+		"vite": "^4.4.9",
+		"unbuild": "^2.0.0"
 	}
 }
