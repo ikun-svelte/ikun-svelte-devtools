@@ -42,7 +42,8 @@
 	},
 	"scripts": {
 		"init": "pnpm i",
-		"dev": "esno scripts/dev.js",
+		"dev": "pnpm run dev:other && pnpm run dev:client",
+		"dev:other": "esno scripts/dev.js",
 		"dev:client": "pnpm run --filter @ikun-svelte-devtools/client dev",
 		"build": "pnpm run clean:dist && esno scripts/build.js",
 		"play": "pnpm run --filter @ikun-svelte-devtools/playground dev",

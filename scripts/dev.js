@@ -1,11 +1,14 @@
 import { runTask } from './utils.js';
 
-runTask('pnpm run dev', 'packages/shared', 'dev').finally(() => {
-	runTask('pnpm run dev', 'packages/utils/client', 'dev').finally(() => {
-		runTask('pnpm run dev', 'packages/utils/server', 'dev').finally(() => {
-			runTask('pnpm run build', 'packages/icons', 'dev').finally(() => {
-				runTask('pnpm run dev', 'packages/server', 'dev').finally(() => {});
+runTask('pnpm run build', 'packages/shared', 'build').finally(() => {
+	runTask('pnpm run build', 'packages/utils/client', 'build').finally(() => {
+		runTask('pnpm run build', 'packages/utils/server', 'build').finally(() => {
+			runTask('pnpm run build', 'packages/icons', 'build').finally(() => {
+				runTask('pnpm run build', 'packages/server', 'build').finally(() => {
+
+				});
 			});
 		});
 	});
 });
+
