@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/icons",
-	"version": "0.0.1-beta.11",
+	"version": "0.0.1-beta.12",
 	"type": "module",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
