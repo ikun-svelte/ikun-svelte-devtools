@@ -37,8 +37,8 @@
         svelteKit: outerLinks.svelteKit,
         pages: '/__devtools__/PagesAnalysis',
         components: '/__devtools__/Components',
-        star: '',
-        bug: '',
+        star: 'https://github.com/ikun-svelte/ikun-svelte-devtools',
+        bug: 'https://github.com/ikun-svelte/ikun-svelte-devtools/issues',
         setting: '/__devtools__/Setting'
     }
 </script>
@@ -75,6 +75,7 @@
          <span class="my-2 text-muted dark:text-white  text-sm break-keep">svelte-kit v{svelteKitVersion}</span>
      </a>
      <i class="flex-col cursor-pointer
+        font-sans
          hover:animate-LianYi
            hover:shadow-lg m-2 flex-c flex-1 rounded-lg min-w-124px
            h-100px border border-solid border-main">
@@ -84,7 +85,7 @@
                     height="30px"
                     color="text-tx-light">
              </KIcon>
-             <span class="my-2 text-muted dark:text-white  text-sm break-keep">{routesNum} pages</span>
+             <span class="my-2 text-muted dark:text-white  text-sm break-keep not-italic">{routesNum} pages</span>
          </Link>
      </i>
      <i class="flex-col cursor-pointer
@@ -97,7 +98,7 @@
                     height="30px"
                     color="text-tx-light">
              </KIcon>
-             <span class="my-2 text-muted dark:text-white  text-sm break-keep">{sfcNum} components</span>
+             <span class="my-2 text-muted dark:text-white  text-sm break-keep not-italic">{sfcNum} components</span>
          </Link>
      </i>
  </div>
@@ -132,7 +133,7 @@
               class="flex-c"
               to={links.setting}>
              <KIcon icon="{linkHover.setting}" color="text-tx-light"></KIcon>
-             <span class="ml-1">Settings</span>
+             <span class="ml-1 not-italic">Settings</span>
            </Link>
          </i>
      </div>
