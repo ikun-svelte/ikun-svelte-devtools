@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/utils-server",
-	"version": "0.0.1-beta.14",
+	"version": "0.0.1-beta.15",
 	"type": "module",
 	"sideEffects": false,
 	"files": [
