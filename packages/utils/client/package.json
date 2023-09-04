@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/utils-client",
-	"version": "0.0.1-beta.13",
+	"version": "0.0.1-beta.14",
 	"sideEffects": false,
 	"files": [
 		"dist"
