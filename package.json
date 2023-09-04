@@ -1,6 +1,6 @@
 {
 	"name": "@ikun-svelte-devtools/core",
-	"description": "\uD83C\uDF68 A vite plugin that improves the svelte development experience",
+	"description": "🍨 A vite plugin that improves the svelte development experience",
 	"type": "module",
 	"version": "0.0.1-beta.12",
 	"keywords": [

@@ -63,7 +63,6 @@
 
      function setCurrentAndNextRoute(path = ''){
       nextRoute = currentRoute = path ? path : window.parent.location.pathname;
-      console.log(currentRoute, nextRoute)
     }
 
 

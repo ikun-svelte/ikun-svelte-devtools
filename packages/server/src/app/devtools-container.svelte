@@ -94,6 +94,7 @@
             eyeDropperRef && (eyeDropperRef.style.display = 'flex')
             setTimeout(() => modalRef && (modalRef.style.display = 'none'), 350)
           }else {
+            eyeDropperRef && (eyeDropperRef.style.display = 'none')
             setTimeout(() => bubbleRef && (bubbleRef.style.display = 'none'), 350)
             modalRef && (modalRef.style.display = 'initial')
           }

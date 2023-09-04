@@ -1,5 +1,6 @@
-# readme.md
 # ci
+
 # PlAN
+
 # drag
-# close bug
+# 关闭后会到 overview
