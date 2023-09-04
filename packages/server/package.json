@@ -1,9 +1,18 @@
 {
 	"name": "@ikun-svelte-devtools/server",
+	"description": "\uD83C\uDF68 A vite plugin that improves the svelte development experience",
 	"type": "module",
 	"version": "0.0.1-beta.12",
 	"main": "./dist/index.js",
 	"types": "dist/index.d.ts",
+	"keywords": [
+		"vue-devtools",
+		"vite-plugin",
+		"vite-plugin-vue-devtools",
+		"svelte-devtools",
+		"vite-plugin-svelte-devtools",
+		"dx"
+	],
 	"files": [
 		"dist",
 		"src/app",
