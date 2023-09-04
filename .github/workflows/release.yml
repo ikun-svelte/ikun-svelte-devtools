@@ -35,11 +35,33 @@ jobs:
       - name: Build
         run: pnpm run build
 
-      - name: Set npmrc for components
-        run: |
-          for package in components/*/; do
-            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ${package}/.npmrc
-          done
+      - name: Set npmrc for client
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > packages/client/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Set npmrc for icons
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > packages/icons/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Set npmrc for server
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >  packages/server/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Set npmrc for shared
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > packages/shared/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Set npmrc for utils-client
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > packages/utils/client/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Set npmrc for utils-server
+        run: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > packages/utils/server/.npmrc
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
