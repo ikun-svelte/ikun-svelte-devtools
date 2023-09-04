@@ -2,7 +2,7 @@
 	"name": "@ikun-svelte-devtools/server",
 	"description": "🍨 A vite plugin that improves the svelte development experience",
 	"type": "module",
-	"version": "0.0.1-beta.15",
+	"version": "0.0.1-beta.16",
 	"main": "./dist/index.js",
 	"types": "dist/index.d.ts",
 	"keywords": [
