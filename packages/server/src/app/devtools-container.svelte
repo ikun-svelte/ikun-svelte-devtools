@@ -298,7 +298,7 @@
         </div>
 
         <div class="svelte-devtools-resize-handle svelte-devtools-resize-handle-corner"
-             style="top: 0; left: 0; cursor: move "
+             style="top: 8px; left: 8px; cursor: move ; width: 10px; height: 10px"
              aria-hidden="true"
              on:mousedown|preventDefault ={() => setResizingType('m')}>
         </div>
