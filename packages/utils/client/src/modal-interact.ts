@@ -7,18 +7,19 @@ export function dragResize(node: HTMLElement, params) {
 	let left = '20%';
 	let initialY = 0;
 	let initialX = 0;
-	let { isResizing, iframeInner } = params;
-	function setResizingType(type: string) {
-		isResizing = type;
-	}
+	let { iframeInner } = params;
+	const { getResizing, setResizing } = params;
+	let isResizing = getResizing();
 
 	function resetResizingType() {
-		setResizingType('');
+		setResizing('');
+		isResizing = '';
 		iframeInner && (iframeInner.style.pointerEvents = 'auto');
 	}
 
 	function setInitialPosition(e: MouseEvent) {
-		if (node) {
+		isResizing = getResizing();
+		if (node && isResizing) {
 			initialX = e.clientX - node.offsetLeft;
 			initialY = e.clientY - node.offsetTop;
 		}
@@ -68,7 +69,8 @@ export function dragResize(node: HTMLElement, params) {
 	addResizeEvt();
 	return {
 		update: (parameters: any) => {
-			isResizing = parameters.isResizing;
+			isResizing = parameters.getResizing();
+			parameters.setResizing(isResizing);
 			iframeInner = parameters.iframeInner;
 		},
 		destroy: () => {

@@ -264,7 +264,11 @@
 
     <div class="sdt-modal {showModal ? 'vanishIn' : 'vanishOut'} {clsDark}"
          bind:this={modalRef}
-         use:dragResize = {{isResizing, iframeInner}}
+         use:dragResize = {{
+             getResizing:() => isResizing,
+             setResizing: (v) => { isResizing = v },
+             iframeInner
+         }}
          id="sdt_modal">
         {#if showClose}
             <div class="sdt-modal--close"
