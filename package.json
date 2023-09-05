@@ -3,7 +3,7 @@
 	"description": "🍨 A vite plugin that improves the svelte development experience",
 	"type": "module",
 	"packageManager": "pnpm@8.6.7",
-	"version": "0.0.1-beta.16",
+	"version": "0.0.1-beta.17",
 	"keywords": [
 		"vue-devtools",
 		"vite-plugin",
