@@ -47,8 +47,8 @@
 		"dev:client": "pnpm run --filter @ikun-svelte-devtools/client dev",
 		"build": "pnpm run clean:dist && esno scripts/build.js",
 		"play": "pnpm run --filter @ikun-svelte-devtools/playground dev",
-		"lint": "prettier --plugin-search-dir --check . && eslint .",
-		"format": "prettier --plugin-search-dir --write .",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
 		"release": "bumpp package.json packages/*/**/package.json packages/*/package.json --commit --push --tag",
 		"clean:dist": "rimraf dist && esno scripts/clean.js",
 		"prepare": "npx simple-git-hooks",
@@ -59,40 +59,47 @@
 		"vite": "^3.0.0-0 || ^4.0.0-0"
 	},
 	"dependencies": {
-		"baiwusanyu-utils": "^1.0.16",
+		"@ikun-svelte-devtools/client": "workspace:*",
+		"@ikun-svelte-devtools/icons": "workspace:*",
+		"@ikun-svelte-devtools/server": "workspace:*",
+		"@ikun-svelte-devtools/shared": "workspace:*",
 		"@ikun-svelte-devtools/utils-client": "workspace:*",
 		"@ikun-svelte-devtools/utils-server": "workspace:*",
-		"@ikun-svelte-devtools/icons": "workspace:*",
-		"@ikun-svelte-devtools/shared": "workspace:*",
-		"@ikun-svelte-devtools/client": "workspace:*",
-		"@ikun-svelte-devtools/server": "workspace:*"
+		"baiwusanyu-utils": "^1.0.16"
 	},
 	"devDependencies": {
 		"@sveltejs/eslint-config": "^6.0.4",
 		"@types/node": "^20.4.1",
 		"@types/splitpanes": "^2.2.1",
-		"@unocss/eslint-config": "^0.53.5",
-		"@unocss/reset": "^0.53.5",
 		"@typescript-eslint/eslint-plugin": "^6.3.0",
 		"@typescript-eslint/parser": "^6.3.0",
+		"@unocss/eslint-config": "^0.53.5",
+		"@unocss/reset": "^0.53.5",
+		"bumpp": "^9.1.1",
+		"del": "^7.0.0",
 		"eslint": "^8.46.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-plugin-svelte": "^2.32.4",
+		"esno": "^0.17.0",
+		"fast-glob": "^3.3.1",
+		"lint-staged": "^14.0.1",
+		"npm-run-all": "^4.1.5",
 		"prettier": "^3.0.1",
 		"prettier-plugin-svelte": "^3.0.3",
-		"bumpp": "^9.1.1",
-		"npm-run-all": "^4.1.5",
 		"rimraf": "^5.0.1",
-		"simple-git-hooks": "^2.9.0",
-		"typescript": "^5.1.6",
-		"tsup": "^7.2.0",
-		"del": "^7.0.0",
-		"esno": "^0.17.0",
 		"shelljs": "^0.8.5",
-		"fast-glob": "^3.3.1"
+		"simple-git-hooks": "^2.9.0",
+		"tsup": "^7.2.0",
+		"typescript": "^5.1.6"
+	},
+	"lint-staged": {
+		"*.{svelte,js,ts,jsx,tsx,json}": [
+			"prettier --write",
+			"eslint"
+		]
 	},
 	"simple-git-hooks": {
-		"pre-commit": "pnpm run format && pnpm run lint",
+		"pre-commit": "npx lint-staged",
 		"commit-msg": "node vertify-commit.js"
 	}
 }
