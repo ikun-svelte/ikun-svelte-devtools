@@ -10,47 +10,47 @@ ikun-svelte-devtools
 
 ## Features
 
-![overview.png](public%2Foverview.png)
+![overview.png](public/overview.png)
 
 ### page
 
 In the pages module, you can quickly understand which pages the project contains
 
-![page.png](public%2Fpage.png)
+![page.png](public/page.png)
 
 ### Routes
 
 In the Routes module, you can quickly understand the routing information of the project
 
-![router.png](public%2Frouter.png)
+![router.png](public/router.png)
 
 ### Assets
 
 In the Assets module, you can quickly understand the static resources of the project, including pictures, fonts, etc.
 
-![assets.png](public%2Fassets.png)
+![assets.png](public/assets.png)
 
 ### Search Packages
 
 In the Search Packages module you can search for dependencies and install or uninstall them
 
-![search-package.png](public%2Fsearch-package.png)
+![search-package.png](public/search-package.png)
 
 ### Inspect
 
 In the Inspect module you can view the compiled code, It comes from `vite-plugin-inspect` support.
 
-![inpect.png](public%2Finpect.png)
+![inpect.png](public/inpect.png)
 
 ### Graph
 
 In the Graph module, you can quickly understand the reference relationship between js and sfc through visualization
 
-![graph.png](public%2Fgraph.png)
+![graph.png](public/graph.png)
 
 ### Inspector
 
-In the Inspector module, you can click on an element on the page to open the corresponding source code in the IDE.  
+In the Inspector module, you can click on an element on the page to open the corresponding source code in the IDE.
 It comes from `svelte-kit-inspector` support.
 
 ### EyeDropper
