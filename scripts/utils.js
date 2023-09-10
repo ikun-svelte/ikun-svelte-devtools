@@ -3,6 +3,7 @@ import { log, setGlobalPrefix } from 'baiwusanyu-utils';
 import fs from 'fs';
 import path from 'path';
 import fg from 'fast-glob';
+
 export async function runCommand(command, dir, userOptions) {
 	return new Promise((resolve, reject) => {
 		try {

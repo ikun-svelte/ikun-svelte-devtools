@@ -1,3 +1,5 @@
 import { runTask } from './utils.js';
 
-runTask('pnpm run publish:npm', 'packages', 'publish');
+(async () => {
+	await runTask('pnpm run publish:npm', 'packages', 'publish');
+})();
